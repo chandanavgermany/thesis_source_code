@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://modeler.netgrif.com/petriflow_schema.xsd">
+<subnet>
+	<id>new_model</id>
+	<version>1.0.0</version>
+	<initials>NEW</initials>
+	<title>New Model</title>
+	<icon>home</icon>
+	<defaultRole>true</defaultRole>
+	<transitionRole>false</transitionRole>
+	<!-- TRANSACTIONS -->
+	<!-- ROLES -->
+	<!-- DATA -->
+	<!-- I18NS -->
+	<!-- TRANSITIONS -->
+	<transition>
+		<id>4</id>
+		<x>481</x>
+		<y>214</y>
+		<layout>
+			<offset>0</offset>
+		</layout>
+		<label>t1</label>
+	</transition>
+	<transition>
+		<id>5</id>
+		<x>676</x>
+		<y>213</y>
+		<layout>
+			<offset>0</offset>
+		</layout>
+		<label>t2</label>
+	</transition>
+	<!-- PLACES -->
+	<place>
+		<id>1</id>
+		<x>409</x>
+		<y>214</y>
+		<label>p1-M-M1</label>
+		<tokens>1</tokens>
+		<isStatice>false</isStatice>
+	</place>
+	<place>
+		<id>2</id>
+		<x>592</x>
+		<y>213</y>
+		<label>p2-M-M2</label>
+		<tokens>0</tokens>
+		<isStatice>false</isStatice>
+	</place>
+	<place>
+		<id>3</id>
+		<x>767</x>
+		<y>205</y>
+		<label>p3-S-S1</label>
+		<tokens>0</tokens>
+		<isStatice>false</isStatice>
+	</place>
+	<!-- ARCS -->
+	<arc>
+		<id>6</id>
+		<type>regular</type>
+		<sourceId>1</sourceId>
+		<destinationId>4</destinationId>
+		<multiplicity>1</multiplicity>
+	</arc>
+	<arc>
+		<id>7</id>
+		<type>regular</type>
+		<sourceId>4</sourceId>
+		<destinationId>2</destinationId>
+		<multiplicity>1</multiplicity>
+	</arc>
+	<arc>
+		<id>8</id>
+		<type>regular</type>
+		<sourceId>2</sourceId>
+		<destinationId>5</destinationId>
+		<multiplicity>1</multiplicity>
+	</arc>
+	<arc>
+		<id>9</id>
+		<type>regular</type>
+		<sourceId>5</sourceId>
+		<destinationId>3</destinationId>
+		<multiplicity>1</multiplicity>
+	</arc>
+</subnet>
+</document>
