@@ -120,7 +120,7 @@ class GeneticAlgorithmAgent:
         self.selection_method = selection_method_enum
         self.mutation_probability = mutation_probability
         self.selection_size = selection_size
-        self.benchmark = benchmark
+        self.benchmark = False
         self.result_population = []
         self.best_solution = None
         self.memory = None
@@ -178,11 +178,10 @@ class GeneticAlgorithmAgent:
             
             parents = self.parent_selection_moo(pareto_solutions, self.selection_size)
             selection_size = self.selection_size 
-            
+
             while selection_size > 0:
-                parent1 = random.sample(parents, 1)
-                parent2 = random.sample(parents, 1)
-                
+                parent1 = random.choice(parents) # selects randomly one parent
+                parent2 = random.choice(parents)
                 feasible_child = False
                 while not feasible_child:
                     try:
@@ -327,8 +326,8 @@ class GeneticAlgorithmAgent:
             size_fittest = len(pareto_fronts_solution_objects)
             size_random = selection_size - size_fittest
         
-        parents.append(random.sample(pareto_fronts_solution_objects, size_fittest)) # selection of fittest members
-        parents.append(random.sample(non_front_pareto_solution_objects, size_random)) # selection of random members
+        parents += random.sample(pareto_fronts_solution_objects, size_fittest) # selection of fittest members
+        parents += random.sample(non_front_pareto_solution_objects, size_random) # selection of random members
         
         return parents
     
@@ -353,11 +352,11 @@ class GeneticAlgorithmAgent:
         pareto_solutions, best_solution = get_multi_objective_optimal_sol(population, self.objective_params, self.reschedule, visualize=True, rank=3) 
         
         pareto_solutions_objects = self.convert_to_solution_obj(pareto_solutions)
-        next_population.append(pareto_solutions_objects)
+        next_population += pareto_solutions_objects
         
         size = self.population_size - len(next_population)
         
         if size > 0:
-            next_population.append(random.sample(population, size))
+            next_population += random.sample(population, size)
         
         return next_population
