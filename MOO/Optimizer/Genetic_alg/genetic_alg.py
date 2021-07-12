@@ -120,7 +120,7 @@ class GeneticAlgorithmAgent:
         self.selection_method = selection_method_enum
         self.mutation_probability = mutation_probability
         self.selection_size = selection_size
-        self.benchmark = False
+        self.benchmark = benchmark
         self.result_population = []
         self.best_solution = None
         self.memory = None
