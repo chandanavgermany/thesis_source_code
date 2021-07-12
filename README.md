@@ -1,6 +1,6 @@
 Master thesis source code. 
 
-Folder SOO - Single-Objective Optimization 
+Folder SOO - Single-Objective Optimization, 
 Folder MOO - Multi-Objective Optimization
 
 Source code contains hybrid (sequential ensemble of Genetic algorithm and parallel Tabu search) algorithm for optimization of job shop problems. 
